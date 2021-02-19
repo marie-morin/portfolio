@@ -1,29 +1,53 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+// import Home from '../views/Home.vue'
+// import axios from "axios";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: () => import("../views/Home.vue"),
+    meta: {
+      title: "Bienvenue - Marie Morin",
+      requiresAuth: false,
+    },
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/work",
+    name: "Work",
+    component: () => import("../views/Work.vue"),
+    meta: {
+      title: "Mes projets",
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
+    meta: {
+      title: "Mon parcours",
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/*",
+    name: "404",
+    component: () => import("../views/NotFound.vue"),
+    meta: {
+      title: "Page introuvable - Groupamania",
+      requiresAuth: false,
+    },
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
