@@ -4,23 +4,11 @@ export default { name: "TheFooter" };
 
 
 <template>
-  <div class="footer">
-      Nique ta mere
-    <!-- <img src="../../public/images/icon-white.png" alt="Logo Groupomania" class="footer__logo" /> -->
-  </div> 
+  <footer className="footer">
+  </footer>
 </template>
 
 
 <style scoped lang="scss">
-.footer {
-  width: 100%;
-  @include flexbox(center, row, center);
-  background-color: $primary-color;
 
-  &__logo {
-    width: 15%;
-    min-width: 17rem;
-    margin: $marged-centered-margin;
-  }
-}
 </style>

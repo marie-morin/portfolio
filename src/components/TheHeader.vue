@@ -1,130 +1,123 @@
 <script>
-// import store from "../store";
-// import { mapGetters } from "vuex";
-// import BaseAvatar from "@/components/BaseAvatar";
-import BaseButton from "@/components/BaseButton";
 
 export default {
   name: "TheHeader",
-
-//   components: { BaseAvatar, BaseButton },
-  components: { BaseButton },
-
-  data() {
-    return { selectedPage: null, }
-  },
-
-//   computed: mapGetters(["currentUser"]),
-
-  watch: {
-    $route(to) {
-      this.selectedPage = to.name;
-    },
-  },
-
-  created() {
-    this.selectedPage = this.$route.name
-  },
-
-//   methods: {
-//     logout() {
-//       localStorage.clear();
-//       this.$router.push("/");
-//       store.commit("removeUser");
-//       store.commit("removeUsers");
-//       store.commit("removeGuest");
-//       store.commit("removePosts");
-//     },
-//   },
 };
 </script>
 
 
 <template>
-  <div class="header">
-    <div class="container header__content">
-      
-      <!-- <div class="header__welcome">
-        <BaseAvatar :user="currentUser" origin="header" />
-        <p>{{ currentUser.firstname }} {{ currentUser.lastname }}</p>
-      </div> -->
 
-      <nav class="header__nav">
+  <header class="header">
+    <div class="container">
+      <img src="https://via.placeholder.com/30" alt="logo" />
 
-        <BaseButton
-          to="/home"
-          tag="router-link"
-          isNavBtn
-          :class="{ active : selectedPage == 'Home' }"
-          aria-label="Accueil"
-        >
-          <font-awesome-icon icon="home" />
-        </BaseButton>
-
-        <BaseButton
-          to="/work"
-          tag="router-link"
-          isNavBtn
-          :class="{ active : selectedPage == 'Users' }"
-          aria-label="Utilisateurs"
-        >
-          <font-awesome-icon icon="users" />
-        </BaseButton>
+      <div>
+        <ul class="navigation">
+          <li>
+            <router-link to="/home">Accueil</router-link>
+          </li>
+          <li>
+            <router-link to="/work">Projets</router-link>
+          </li>
+          <li>
+            <router-link to="/about">A Porpos</router-link>
+          </li>
+        </ul>
         
-        <BaseButton
-          to="/about"
-          tag="router-link"
-          isNavBtn
-          :class="{ active : selectedPage == 'Profil' }"
-          aria-label="Profil"
-        >
-          <font-awesome-icon icon="user-circle" />
-        </BaseButton>
-
-        <!-- <BaseButton
-          @click.prevent="logout"
-          tag="button"
-          isNavBtn
-          aria-label="Deconnexion"
-        >
-          <font-awesome-icon icon="power-off"/>
-        </BaseButton> -->
-      </nav>
+        <img
+          src="https://via.placeholder.com/20"
+          alt="logo"
+          className="logo-rs"
+        />
+        <img
+          src="https://via.placeholder.com/20"
+          alt="test"
+          className="logo-rs"
+        />
+      </div>
     </div>
-  </div>
+  </header>
+  
 </template>
 
 
 <style scoped lang="scss">
-// <style scoped lang="scss">
-// .header {
-//   width: 100%;
-//   background-color: $primary-color;
-//   color: $clear-color;
+.header {
+  padding: 3rem 0;
+  background-color: pink;
+  // background-color: white;
 
-//   &__content {
-//     @include flexbox(space-between, row, center);
+  > div {
+    display: flex;
+    justify-content: space-between;
 
-//     @media screen and (max-width: $break-small) {
-//       @include flexbox(flex-start, column, center);
-//     }
-//   }
+    > div {
+      display: flex;
 
-//   &__welcome {
-//     @include flexbox(flex-start, row, center);
-//   }
+      @media screen and (max-width: $break-tablet) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  }
 
-//   &__nav {
-//     @include flexbox(space-between, row, center);
+  img {
+    max-height: 3rem;
 
-//     @media screen and (max-width: $break-small) {
-//       margin-bottom: 1.5rem;
-//     }
-//   }
-// }
+    &.logo-rs {
+      max-height: 2rem;
+      margin-left: 4rem;
+    }
+  }
 
-// .active {
-//   box-shadow: $shadow;
-//   border-radius: $round-radius;
-// }
+  ul.navigation {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+    @media screen and (max-width: $break-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    list-style: none;
+
+    @media screen and (min-width: $break-tablet + 1) {
+      &:not(:first-child) {
+        --marginLeft: 8rem;
+        margin-left: var(--marginLeft);
+
+        &::before {
+          content: "";
+          width: 0.2rem;
+          height: 60%;
+          position: absolute;
+          left: calc(var(--marginLeft) / 2 * -1);
+          top: 50%;
+          transform: translateY(-50%);
+
+          background-color: #aaaaaa;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: $font-color;
+
+    @media screen and (max-width: $break-tablet) {
+      width: 100%;
+      text-align: right;
+    }
+  }
+}
 </style>
