@@ -1,6 +1,10 @@
 <script>
+import BurgerMenu from "./BurgerMenu";
+
 export default {
   name: "TheHeader",
+
+  components: { BurgerMenu },
 
   data() {
     return {
@@ -44,6 +48,7 @@ export default {
       <img src="https://via.placeholder.com/30" alt="logo" />
 
       <div>
+        <BurgerMenu />
         <ul class="navigation">
           <li>
             <router-link to="/" :class="{ active: selectedPage == 'Home' }">
@@ -122,7 +127,17 @@ export default {
     padding: 0;
 
     @media screen and (max-width: $break-tablet) {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      // padding: 6rem;
+      background-color: white;
     }
   }
 
@@ -151,6 +166,12 @@ export default {
         }
       }
     }
+
+    &:not(:first-child) {
+      @media screen and (max-width: $break-tablet) {
+        margin-top: 3rem;
+      }
+    }
   }
 
   a {
@@ -161,7 +182,10 @@ export default {
 
     @media screen and (max-width: $break-tablet) {
       width: 100%;
-      text-align: right;
+      font-size: 3.5rem;
+    }
+    @media screen and (max-width: $break-small) {
+      font-size: 2.8rem;
     }
   }
 }
