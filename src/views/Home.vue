@@ -34,7 +34,7 @@ export default {
         nec dui. Sed rhoncus, tortor sed eleifend tristique, tortor mauris
         molestie elit, et lacinia ipsum quam nec dui.
       </p>
-      <h2>Mes Projets</h2>
+      <h2>Projets</h2>
       <div class="intro-projets container">
         <ProjetPreview />
         <ProjetPreview />
@@ -43,7 +43,7 @@ export default {
     </section>
 
     <section class="technos container">
-        <h2>Mes technologies</h2>
+        <h2>Technologies</h2>
 
         <h3>Front-End</h3>
         <div class="technos-list">
@@ -71,11 +71,6 @@ export default {
           <font-awesome-icon :icon="['fab', 'trello']" />
           <font-awesome-icon icon="code" />
         </div>
-
-        <hr>
-        <font-awesome-icon icon="terminal" />
-        <font-awesome-icon :icon="['fab', 'free-code-camp']" />
-
       </section>
   </div>
 </template>
