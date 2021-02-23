@@ -42,26 +42,40 @@ export default {
       </div>
     </section>
 
-    <section>
+    <section class="technos container">
         <h2>Mes technologies</h2>
-        <font-awesome-icon icon="database" />
-        <font-awesome-icon icon="terminal" />
-        <font-awesome-icon icon="code" />
 
-        <font-awesome-icon :icon="['fab', 'html5']" />
-        <font-awesome-icon :icon="['fab', 'css3-alt']" />
-        <font-awesome-icon :icon="['fab', 'js-square']" />
-        <font-awesome-icon :icon="['fab', 'vuejs']" />
-        <font-awesome-icon :icon="['fab', 'github']" />
-        <font-awesome-icon :icon="['fab', 'git-alt']" />
-        <font-awesome-icon :icon="['fab', 'php']" />
-        <font-awesome-icon :icon="['fab', 'trello']" />
-        <font-awesome-icon :icon="['fab', 'node-js']" />
-        <font-awesome-icon :icon="['fab', 'node']" />
-        <font-awesome-icon :icon="['fab', 'sass']" />
-        <font-awesome-icon :icon="['fab', 'react']" />
+        <h3>Front-End</h3>
+        <div class="technos-list">
+          <font-awesome-icon :icon="['fab', 'html5']" />
+          <font-awesome-icon :icon="['fab', 'css3-alt']" />
+          <font-awesome-icon :icon="['fab', 'sass']" />
+          <font-awesome-icon :icon="['fab', 'js-square']" />
+          <font-awesome-icon :icon="['fab', 'vuejs']" />
+          <font-awesome-icon :icon="['fab', 'react']" />
+        </div>
+
+        <h3>Back-End</h3>
+        <div class="technos-list">
+          <font-awesome-icon :icon="['fab', 'node-js']" />
+          <font-awesome-icon :icon="['fab', 'node']" />
+          <font-awesome-icon icon="database" />
+          <font-awesome-icon :icon="['fab', 'php']" />
+          <font-awesome-icon :icon="['fab', 'wordpress-simple']" />
+        </div>
+
+        <h3>Outils</h3>
+        <div class="technos-list">
+          <font-awesome-icon :icon="['fab', 'git-alt']" />
+          <font-awesome-icon :icon="['fab', 'github']" />
+          <font-awesome-icon :icon="['fab', 'trello']" />
+          <font-awesome-icon icon="code" />
+        </div>
+
+        <hr>
+        <font-awesome-icon icon="terminal" />
         <font-awesome-icon :icon="['fab', 'free-code-camp']" />
-        <font-awesome-icon :icon="['fab', 'wordpress-simple']" />
+
       </section>
   </div>
 </template>
@@ -165,7 +179,32 @@ export default {
 }
 
 h2 {
-    margin-top: 5rem;
-    text-transform: uppercase;
+  margin-top: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.technos {
+  width: 100%;
+
+  &-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    &:not(:last-child) {
+      margin-bottom: 6rem;
+
+    }
+    >svg {
+      font-size: 5rem;
+    }
   }
+}
 </style>
