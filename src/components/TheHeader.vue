@@ -2,6 +2,20 @@
 
 export default {
   name: "TheHeader",
+
+  data() {
+    return { selectedPage: null, }
+  },
+
+  watch: {
+    $route(to) {
+      this.selectedPage = to.name;
+    },
+  },
+
+  created() {
+    this.selectedPage = this.$route.name
+  },
 };
 </script>
 
@@ -15,28 +29,47 @@ export default {
       <div>
         <ul class="navigation">
           <li>
-            <router-link to="/">Accueil</router-link>
+            <router-link
+              to="/"
+              :class="{ active : selectedPage == 'Home' }"
+            >
+              Accueil
+            </router-link>
           </li>
           <li>
-            <router-link to="/about">CV</router-link>
+            <router-link
+              to="/about"
+              :class="{ active : selectedPage == 'About' }"
+            >
+              CV
+            </router-link>
           </li>
           <li>
-            <router-link to="/work">Projets</router-link>
+            <router-link
+            to="/work"
+            :class="{ active : selectedPage == 'Work' }"
+          >
+            Projets
+          </router-link>
           </li>
           <li>
-            <router-link to="/">Contact</router-link>
+            <router-link
+              to="/"
+            >
+              Contact
+            </router-link>
           </li>
         </ul>
         
         <img
           src="https://via.placeholder.com/20"
           alt="logo"
-          className="logo-rs"
+          class="logo-rs"
         />
         <img
           src="https://via.placeholder.com/20"
           alt="test"
-          className="logo-rs"
+          class="logo-rs"
         />
       </div>
     </div>
@@ -56,6 +89,7 @@ export default {
 
     > div {
       display: flex;
+      align-items: center;
 
       @media screen and (max-width: $break-tablet) {
         flex-direction: column;
@@ -121,5 +155,9 @@ export default {
       text-align: right;
     }
   }
+}
+
+.active {
+  color: pink !important;
 }
 </style>

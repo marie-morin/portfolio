@@ -4,7 +4,7 @@ export default { name: "TheFooter" };
 
 
 <template>
-  <footer className="footer">
+  <footer class="footer">
   </footer>
 </template>
 

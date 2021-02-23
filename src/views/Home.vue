@@ -9,7 +9,7 @@ export default {
 
 <template>
   <div>
-    <section class="hero testouille">
+    <section class="hero">
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
@@ -39,20 +39,29 @@ export default {
         <ProjetPreview />
         <ProjetPreview />
         <ProjetPreview />
-        <ProjetPreview />
-        <ProjetPreview />
-        <ProjetPreview />
       </div>
-      <button>Voir plus de projets</button>
     </section>
 
     <section>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam
-        velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-        commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed
-        eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam
-        nec dui. Sed rhoncus, tortor sed eleifend tristique, tortor mauris
-        molestie elit, et lacinia ipsum quam nec dui.
+        <h2>Mes technologies</h2>
+        <font-awesome-icon icon="database" />
+        <font-awesome-icon icon="terminal" />
+        <font-awesome-icon icon="code" />
+
+        <font-awesome-icon :icon="['fab', 'html5']" />
+        <font-awesome-icon :icon="['fab', 'css3-alt']" />
+        <font-awesome-icon :icon="['fab', 'js-square']" />
+        <font-awesome-icon :icon="['fab', 'vuejs']" />
+        <font-awesome-icon :icon="['fab', 'github']" />
+        <font-awesome-icon :icon="['fab', 'git-alt']" />
+        <font-awesome-icon :icon="['fab', 'php']" />
+        <font-awesome-icon :icon="['fab', 'trello']" />
+        <font-awesome-icon :icon="['fab', 'node-js']" />
+        <font-awesome-icon :icon="['fab', 'node']" />
+        <font-awesome-icon :icon="['fab', 'sass']" />
+        <font-awesome-icon :icon="['fab', 'react']" />
+        <font-awesome-icon :icon="['fab', 'free-code-camp']" />
+        <font-awesome-icon :icon="['fab', 'wordpress-simple']" />
       </section>
   </div>
 </template>
@@ -60,6 +69,7 @@ export default {
 <style scoped lang="scss">
 .hero {
   width: 100%;
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
@@ -68,13 +78,26 @@ export default {
 
   background-image: url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80");
 
-  background-color: white; /* Used if the image is unavailable */
-  height: 90vh; /* You must set a specified height */
+  background-color: white;
+  height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   text-align: center;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    background-color: white;
+    opacity: .6;
+  }
+
+  > * {
+    position: relative;
+  }
 
   &-hello {
     text-transform: uppercase;
@@ -117,10 +140,7 @@ export default {
     position: relative;
   }
 
-  h2 {
-    margin-top: 5rem;
-    text-transform: uppercase;
-  }
+  
 
   button {
     margin: 1.8rem;
@@ -143,4 +163,9 @@ export default {
     }
   }
 }
+
+h2 {
+    margin-top: 5rem;
+    text-transform: uppercase;
+  }
 </style>
