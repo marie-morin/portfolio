@@ -9,11 +9,8 @@ export default { name: "TheFooter" };
         <div class="footer_cta">
           Vous-êtes prêts à travailler avec moi ?
         </div>
-        <font-awesome-icon :icon="['fab', 'envira']" />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam
-          velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-          commodo lectus, ac blandit elit tincidun.
+          Retrouvez-moi sur :
         </p>
         <div className="footer__socials">
           <a href="https://www.google.com/">
@@ -47,12 +44,9 @@ export default { name: "TheFooter" };
     text-align: center;
 
     &_cta {
-        width: 70%;
-        height: 10rem;
-        margin: -7rem auto 2rem auto;
-
-        // margin-left: auto;
-        // margin-right: auto;
+        width: 60%;
+        height: 8rem;
+        margin: -6rem auto 2rem auto;
 
         display: flex;
         justify-content: center;
@@ -62,12 +56,11 @@ export default { name: "TheFooter" };
         background-color: $secondary-color;
         color: white;
 
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     &_socials {
         display: flex;
-
     }
 
     svg {

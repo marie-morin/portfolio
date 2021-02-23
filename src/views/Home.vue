@@ -2,9 +2,9 @@
 import ProjetPreview from "../components/ProjetPreview";
 import BaseButton from "../components/BaseButton";
 export default {
-  name: 'Home',
-  components: { ProjetPreview, BaseButton }
-}
+  name: "Home",
+  components: { ProjetPreview, BaseButton },
+};
 </script>
 
 <template>
@@ -15,11 +15,7 @@ export default {
       <div>
         <button>Me contacter</button>
         <button>Télecharger mon CV</button>
-        <BaseButton
-          tag="button"
-          isGenericBtn
-          tabindex="0"
-        >
+        <BaseButton tag="button" isGenericBtn tabindex="0">
           Créer une publication
         </BaseButton>
       </div>
@@ -43,42 +39,44 @@ export default {
     </section>
 
     <section class="technos container">
-        <h2>Technologies</h2>
+      <h2>Technologies</h2>
 
-        <h3>Front-End</h3>
-        <div class="technos-list">
-          <font-awesome-icon :icon="['fab', 'html5']" />
-          <font-awesome-icon :icon="['fab', 'css3-alt']" />
-          <font-awesome-icon :icon="['fab', 'sass']" />
-          <font-awesome-icon :icon="['fab', 'js-square']" />
-          <font-awesome-icon :icon="['fab', 'vuejs']" />
-          <font-awesome-icon :icon="['fab', 'react']" />
-        </div>
+      <h3>Front-End</h3>
+      <div class="technos-list">
+        <font-awesome-icon :icon="['fab', 'html5']" />
+        <font-awesome-icon :icon="['fab', 'css3-alt']" />
+        <font-awesome-icon :icon="['fab', 'sass']" />
+        <font-awesome-icon :icon="['fab', 'js-square']" />
+        <font-awesome-icon :icon="['fab', 'vuejs']" />
+        <font-awesome-icon :icon="['fab', 'react']" />
+      </div>
 
-        <h3>Back-End</h3>
-        <div class="technos-list">
-          <font-awesome-icon :icon="['fab', 'node-js']" />
-          <font-awesome-icon :icon="['fab', 'node']" />
-          <font-awesome-icon icon="database" />
-          <font-awesome-icon :icon="['fab', 'php']" />
-          <font-awesome-icon :icon="['fab', 'wordpress-simple']" />
-        </div>
+      <h3>Back-End</h3>
+      <div class="technos-list">
+        <font-awesome-icon :icon="['fab', 'node-js']" />
+        <font-awesome-icon :icon="['fab', 'node']" />
+        <font-awesome-icon icon="database" />
+        <font-awesome-icon :icon="['fab', 'php']" />
+        <font-awesome-icon :icon="['fab', 'wordpress-simple']" />
+      </div>
 
-        <h3>Outils</h3>
-        <div class="technos-list">
-          <font-awesome-icon :icon="['fab', 'git-alt']" />
-          <font-awesome-icon :icon="['fab', 'github']" />
-          <font-awesome-icon :icon="['fab', 'trello']" />
-          <font-awesome-icon icon="code" />
-        </div>
-      </section>
+      <h3>Outils</h3>
+      <div class="technos-list">
+        <font-awesome-icon :icon="['fab', 'git-alt']" />
+        <font-awesome-icon :icon="['fab', 'github']" />
+        <font-awesome-icon :icon="['fab', 'trello']" />
+        <font-awesome-icon icon="code" />
+      </div>
+    </section>
   </div>
 </template>
 
 <style scoped lang="scss">
 .hero {
   width: 100%;
+  height: 95vh;
   padding: 0 2rem;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -88,7 +86,6 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80");
 
   background-color: white;
-  height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,10 +95,10 @@ export default {
   &::before {
     content: "";
     width: 100%;
-    height: 90%;
+    height: 100%;
     position: absolute;
     background-color: white;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   > * {
@@ -149,8 +146,6 @@ export default {
     position: relative;
   }
 
-  
-
   button {
     margin: 1.8rem;
     padding: 1rem 2rem;
@@ -195,9 +190,8 @@ h3 {
 
     &:not(:last-child) {
       margin-bottom: 6rem;
-
     }
-    >svg {
+    > svg {
       font-size: 5rem;
     }
   }

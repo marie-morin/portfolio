@@ -1,10 +1,12 @@
 <script>
-
 export default {
   name: "TheHeader",
 
   data() {
-    return { selectedPage: null, }
+    return {
+      selectedPage: null,
+      headerClass: "",
+    };
   },
 
   watch: {
@@ -14,74 +16,76 @@ export default {
   },
 
   created() {
-    this.selectedPage = this.$route.name
+    this.selectedPage = this.$route.name;
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      // console.log(window.scrollY);
+      if (window.scrollY !== 0) {
+        this.headerClass = "header--scrolled";
+      } else {
+        this.headerClass = "";
+      }
+    },
   },
 };
 </script>
 
 
 <template>
-
-  <header class="header">
+  <header class="header" :class="headerClass">
     <div class="container">
       <img src="https://via.placeholder.com/30" alt="logo" />
 
       <div>
         <ul class="navigation">
           <li>
-            <router-link
-              to="/"
-              :class="{ active : selectedPage == 'Home' }"
-            >
+            <router-link to="/" :class="{ active: selectedPage == 'Home' }">
               Accueil
             </router-link>
           </li>
           <li>
-            <router-link
-              to="/about"
-              :class="{ active : selectedPage == 'About' }"
+            <a
+              href="@/assets/cv-developpeur-web-marie-morin.pdf"
+              :class="{ active: selectedPage == 'About' }"
+              download
             >
               CV
+            </a>
+          </li>
+          <li>
+            <router-link to="/work" :class="{ active: selectedPage == 'Work' }">
+              Projets
             </router-link>
           </li>
           <li>
-            <router-link
-            to="/work"
-            :class="{ active : selectedPage == 'Work' }"
-          >
-            Projets
-          </router-link>
-          </li>
-          <li>
-            <router-link
-              to="/"
-            >
-              Contact
-            </router-link>
+            <router-link to="/"> Contact </router-link>
           </li>
         </ul>
-        
-        <img
-          src="https://via.placeholder.com/20"
-          alt="logo"
-          class="logo-rs"
-        />
-        <img
-          src="https://via.placeholder.com/20"
-          alt="test"
-          class="logo-rs"
-        />
+
+        <img src="https://via.placeholder.com/20" alt="logo" class="logo-rs" />
+        <img src="https://via.placeholder.com/20" alt="test" class="logo-rs" />
       </div>
     </div>
   </header>
-  
 </template>
 
 
 <style scoped lang="scss">
 .header {
+  width: 100%;
+  position: fixed;
   padding: 3rem 0;
-  background-color: white;
+  background-color: transparent;
+  z-index: 100;
+
+  transition: all 0.3s ease-in-out;
 
   > div {
     display: flex;
@@ -98,6 +102,11 @@ export default {
     }
   }
 
+  &--scrolled {
+    background-color: white;
+    transition: all 0.1s ease-in-out;
+  }
+
   img {
     max-height: 3rem;
 
@@ -108,9 +117,9 @@ export default {
   }
 
   ul.navigation {
-  display: flex;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
 
     @media screen and (max-width: $break-tablet) {
       flex-direction: column;
