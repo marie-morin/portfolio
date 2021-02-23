@@ -15,7 +15,7 @@ export default {
       <div>
         <ul class="navigation">
           <li>
-            <router-link to="/home">Accueil</router-link>
+            <router-link to="/">Accueil</router-link>
           </li>
           <li>
             <router-link to="/work">Projets</router-link>
@@ -46,7 +46,7 @@ export default {
 .header {
   padding: 3rem 0;
   background-color: pink;
-  // background-color: white;
+  // // background-color: white;
 
   > div {
     display: flex;
