@@ -18,10 +18,13 @@ export default {
             <router-link to="/">Accueil</router-link>
           </li>
           <li>
+            <router-link to="/about">CV</router-link>
+          </li>
+          <li>
             <router-link to="/work">Projets</router-link>
           </li>
           <li>
-            <router-link to="/about">A Porpos</router-link>
+            <router-link to="/">Contact</router-link>
           </li>
         </ul>
         
@@ -45,8 +48,7 @@ export default {
 <style scoped lang="scss">
 .header {
   padding: 3rem 0;
-  background-color: pink;
-  // // background-color: white;
+  background-color: white;
 
   > div {
     display: flex;

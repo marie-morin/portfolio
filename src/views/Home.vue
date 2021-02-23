@@ -9,7 +9,7 @@ export default {
 
 <template>
   <div>
-    <section class="hero">
+    <section class="hero testouille">
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
@@ -36,6 +36,9 @@ export default {
       </p>
       <h2>Mes Projets</h2>
       <div class="intro-projets container">
+        <ProjetPreview />
+        <ProjetPreview />
+        <ProjetPreview />
         <ProjetPreview />
         <ProjetPreview />
         <ProjetPreview />
