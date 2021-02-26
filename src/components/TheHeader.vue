@@ -1,4 +1,5 @@
 <script>
+// import About from "../views/About.vue";
 import BurgerMenu from "./BurgerMenu";
 
 export default {
@@ -45,37 +46,43 @@ export default {
 <template>
   <header class="header" :class="headerClass">
     <div class="container">
-      <img src="https://via.placeholder.com/30" alt="logo" />
+      <img src="@/assets/logo.svg" alt="logo" />
 
       <div>
         <BurgerMenu />
         <ul class="navigation">
           <li>
-            <router-link to="/" :class="{ active: selectedPage == 'Home' }">
+            <a href="#top" :class="{ active: selectedPage == 'Home' }">
               Accueil
-            </router-link>
+            </a>
           </li>
+
           <li>
-            <a
-              href="@/assets/cv-developpeur-web-marie-morin.pdf"
-              :class="{ active: selectedPage == 'About' }"
-              download
-            >
+            <a href="#about" :class="{ active: selectedPage == 'About' }">
               CV
             </a>
           </li>
+
           <li>
-            <router-link to="/work" :class="{ active: selectedPage == 'Work' }">
+            <a href="#projets" :class="{ active: selectedPage == 'Work' }">
               Projets
-            </router-link>
+            </a>
           </li>
           <li>
-            <router-link to="/"> Contact </router-link>
+            <a href="mailto:mariemorin19@gmail.com">Contact</a>
           </li>
         </ul>
 
-        <img src="https://via.placeholder.com/20" alt="logo" class="logo-rs" />
-        <img src="https://via.placeholder.com/20" alt="test" class="logo-rs" />
+        <a
+          href="https://www.linkedin.com/in/marie-morin-dev/"
+          target="_blank"
+          class="icon"
+        >
+          <font-awesome-icon :icon="['fab', 'linkedin']" />
+        </a>
+        <a href="https://github.com/marie-morin" target="_blank" class="icon">
+          <font-awesome-icon :icon="['fab', 'github']" />
+        </a>
       </div>
     </div>
   </header>
@@ -113,7 +120,7 @@ export default {
   }
 
   img {
-    max-height: 3rem;
+    max-height: 6rem;
 
     &.logo-rs {
       max-height: 2rem;
@@ -176,7 +183,8 @@ export default {
 
   a {
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
+    font-weight: 600;
     text-transform: uppercase;
     color: $font-color;
 
@@ -187,6 +195,11 @@ export default {
     @media screen and (max-width: $break-small) {
       font-size: 2.8rem;
     }
+  }
+
+  .icon {
+    margin-left: 4rem;
+    font-size: 2.5rem;
   }
 }
 

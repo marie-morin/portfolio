@@ -1,0 +1,38 @@
+[
+    {  
+        "title": "CV en ligne",
+        "description": "",
+        "url": "https://marie-morin.github.io/p2-resume/",
+        "image": "projet2.png"
+    },
+    {  
+        "title": "Groupomania",
+        "description": "",
+        "url": "https://github.com/marie-morin/p7-groupomania",
+        "image": "projet7.png"
+    },
+    {  
+        "title": "La Chouette agence",
+        "description": "",
+        "url": "https://marie-morin.github.io/p4-la-chouette-agence/",
+        "image": "projet4.png"
+    },
+    {  
+        "title": "Orinobear",
+        "description": "",
+        "url": "https://github.com/marie-morin/p5-orinoco",
+        "image": "projet5.png"
+    },
+    {  
+        "title": "SoPickoko",
+        "description": "",
+        "url": "https://github.com/marie-morin/p6-piquante",
+        "image": "projet6.png"
+    },
+    {  
+        "title": "OhMyFood",
+        "description": "",
+        "url": "https://marie-morin.github.io/p3-ohmyfood/",
+        "image": "projet3.png"
+    }
+]

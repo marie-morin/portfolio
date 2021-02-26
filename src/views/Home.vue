@@ -1,15 +1,27 @@
 <script>
 import ProjetPreview from "../components/ProjetPreview";
 import BaseButton from "../components/BaseButton";
+import Projets from "../assets/projets.json";
+
 export default {
   name: "Home",
   components: { ProjetPreview, BaseButton },
+  data() {
+    return {
+      projets: [],
+    };
+  },
+
+  created() {
+    this.projets = Projets;
+    console.log(this.projets);
+  },
 };
 </script>
 
 <template>
   <div>
-    <section class="hero">
+    <section class="hero" id="top">
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
@@ -21,7 +33,7 @@ export default {
       </div>
     </section>
 
-    <section class="intro">
+    <section class="projets" id="projets">
       <p class="container">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam
         velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
@@ -31,14 +43,18 @@ export default {
         molestie elit, et lacinia ipsum quam nec dui.
       </p>
       <h2>Projets</h2>
-      <div class="intro-projets container">
-        <ProjetPreview />
-        <ProjetPreview />
-        <ProjetPreview />
+
+      <div class="projets-list container">
+        <ProjetPreview
+          v-for="projet in projets"
+          :key="projet.title"
+          :projet="projet"
+        />
       </div>
     </section>
 
     <section class="technos container">
+      <h2 id="about">A Propos</h2>
       <h2>Technologies</h2>
 
       <h3>Front-End</h3>
@@ -127,7 +143,7 @@ export default {
   }
 }
 
-.intro {
+.projets {
   position: relative;
   padding-top: 4rem;
   text-align: center;
@@ -135,7 +151,7 @@ export default {
   &::before {
     content: "";
     width: 100%;
-    height: 65%;
+    height: 85%;
     position: absolute;
     top: 0;
     left: 0;
@@ -157,14 +173,11 @@ export default {
     border-radius: $generic-radius;
   }
 
-  &-projets {
-    // padding-top: 4rem;
-    display: flex;
-    justify-content: space-between;
-
-    div {
-      position: relative;
-    }
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
   }
 }
 
