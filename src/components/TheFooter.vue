@@ -8,7 +8,7 @@ export default { name: "TheFooter" };
     <div class="container">
       <div class="footer_cta">
         <p>Vous-êtes prêts à travailler avec moi ?</p>
-        <a href="#" class="btn btn--outline">Montactez-moi</a>
+        <a href="#" class="btn btn--outline">Contactez-moi</a>
       </div>
       <p>Retrouvez-moi sur :</p>
       <div className="footer__socials">
