@@ -1,5 +1,4 @@
 <script>
-// import About from "../views/About.vue";
 import BurgerMenu from "./BurgerMenu";
 
 export default {
@@ -11,6 +10,7 @@ export default {
     return {
       selectedPage: null,
       headerClass: "",
+      menuOpening: false,
     };
   },
 
@@ -31,7 +31,6 @@ export default {
 
   methods: {
     handleScroll() {
-      // console.log(window.scrollY);
       if (window.scrollY !== 0) {
         this.headerClass = "header--scrolled";
       } else {
@@ -45,44 +44,70 @@ export default {
 
 <template>
   <header class="header" :class="headerClass">
-    <div class="container">
+    <div class="container header__container">
       <img src="@/assets/logo.svg" alt="logo" />
 
-      <div>
-        <BurgerMenu />
+      <BurgerMenu
+        @open-menu="menuOpening = !menuOpening"
+        :closeMenu="menuOpening"
+      />
+
+      <div class="links" :class="{ 'links--visible': menuOpening }">
         <ul class="navigation">
           <li>
-            <a href="#top" :class="{ active: selectedPage == 'Home' }">
+            <a
+              href="#top"
+              @click="menuOpening = false"
+              :class="{ active: selectedPage == 'Home' }"
+            >
               Accueil
             </a>
           </li>
 
           <li>
-            <a href="#about" :class="{ active: selectedPage == 'About' }">
+            <a
+              href="#about"
+              @click="menuOpening = false"
+              :class="{ active: selectedPage == 'About' }"
+            >
               CV
             </a>
           </li>
 
           <li>
-            <a href="#projets" :class="{ active: selectedPage == 'Work' }">
+            <a
+              href="#projets"
+              @click="menuOpening = false"
+              :class="{ active: selectedPage == 'Work' }"
+            >
               Projets
             </a>
           </li>
           <li>
-            <a href="mailto:mariemorin19@gmail.com">Contact</a>
+            <a href="mailto:mariemorin19@gmail.com" @click="menuOpening = false"
+              >Contact</a
+            >
           </li>
         </ul>
 
-        <a
-          href="https://www.linkedin.com/in/marie-morin-dev/"
-          target="_blank"
-          class="icon"
-        >
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
-        </a>
-        <a href="https://github.com/marie-morin" target="_blank" class="icon">
-          <font-awesome-icon :icon="['fab', 'github']" />
-        </a>
+        <div class="icons">
+          <a
+            href="https://www.linkedin.com/in/marie-morin-dev/"
+            target="_blank"
+            class="icon"
+            @click="menuOpening = false"
+          >
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+          <a
+            href="https://github.com/marie-morin"
+            target="_blank"
+            class="icon"
+            @click="menuOpening = false"
+          >
+            <font-awesome-icon :icon="['fab', 'github']" />
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -93,30 +118,26 @@ export default {
 .header {
   width: 100%;
   position: fixed;
-  padding: 3rem 0;
+  padding: 2rem 0;
   background-color: transparent;
   z-index: 100;
-
   transition: all 0.3s ease-in-out;
-
-  > div {
-    display: flex;
-    justify-content: space-between;
-
-    > div {
-      display: flex;
-      align-items: center;
-
-      @media screen and (max-width: $break-tablet) {
-        flex-direction: column;
-        align-items: flex-end;
-      }
-    }
-  }
 
   &--scrolled {
     background-color: white;
     transition: all 0.1s ease-in-out;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
   }
 
   img {
@@ -128,10 +149,9 @@ export default {
     }
   }
 
-  ul.navigation {
+  .links {
     display: flex;
-    margin: 0;
-    padding: 0;
+    align-items: center;
 
     @media screen and (max-width: $break-tablet) {
       min-width: 100vw;
@@ -139,12 +159,27 @@ export default {
       position: fixed;
       top: 0;
       right: 0;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+    }
 
+    &--visible {
+      transform: translateY(0%);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  ul.navigation {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (max-width: $break-tablet) {
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      // padding: 6rem;
-      background-color: white;
     }
   }
 
@@ -197,9 +232,21 @@ export default {
     }
   }
 
+  .icons {
+    @media screen and (max-width: $break-tablet) {
+      margin-top: 4rem;
+    }
+  }
+
   .icon {
     margin-left: 4rem;
     font-size: 2.5rem;
+
+    &:first-child {
+      @media screen and (max-width: $break-tablet) {
+        margin-left: 0;
+      }
+    }
   }
 }
 
