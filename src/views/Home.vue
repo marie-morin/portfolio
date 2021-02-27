@@ -25,10 +25,11 @@ export default {
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
-        <button>Me contacter</button>
-        <button>Télecharger mon CV</button>
-        <BaseButton tag="button" isGenericBtn tabindex="0">
-          Créer une publication
+        <BaseButton tag="a" isGenericBtn tabindex="0">
+          Me contacter
+        </BaseButton>
+        <BaseButton tag="a" isGenericBtn tabindex="0">
+          Técléchrger mon cv
         </BaseButton>
       </div>
     </section>
@@ -156,28 +157,25 @@ export default {
     top: 0;
     left: 0;
     background-color: $primary-color;
+
+    @media screen and (max-width: $break-tablet) {
+      height: 95%;
+    }
   }
 
   > * {
     position: relative;
   }
 
-  button {
-    margin: 1.8rem;
-    padding: 1rem 2rem;
-    background-color: $primary-color;
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    border: none;
-    border-radius: $generic-radius;
-  }
-
   &-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 2rem;
+
+    @media screen and (max-width: $break-tablet) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
   }
 }
 

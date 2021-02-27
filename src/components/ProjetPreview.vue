@@ -34,8 +34,10 @@ export default {
 .projet-preview {
   display: block;
   justify-self: center;
-  width: 25rem;
-  height: 25rem;
+
+  min-height: 30rem;
+  width: 100%;
+  height: auto;
 
   background-color: white;
   background-position: center;
@@ -64,6 +66,10 @@ export default {
     &:hover {
       opacity: 0.9;
       transition: all 0.3s ease-in-out;
+
+      > svg {
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      }
     }
   }
 
@@ -77,11 +83,11 @@ export default {
   svg {
     font-size: 3rem;
     color: white;
-  }
-}
 
-.test {
-  max-width: 25rem;
-  max-height: 25rem;
+    &:hover {
+      // animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: rotate(0);
+    }
+  }
 }
 </style>

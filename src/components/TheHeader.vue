@@ -222,6 +222,12 @@ export default {
     font-weight: 600;
     text-transform: uppercase;
     color: $font-color;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: pink;
+      transition: all 0.3s ease-in-out;
+    }
 
     @media screen and (max-width: $break-tablet) {
       width: 100%;
@@ -248,9 +254,5 @@ export default {
       }
     }
   }
-}
-
-.active {
-  color: pink !important;
 }
 </style>

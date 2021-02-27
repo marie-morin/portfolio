@@ -5,6 +5,7 @@ import "./styles/_variables.scss";
 import "./styles/_base.scss";
 import "./styles/_global.scss";
 import "./styles/_mixins.scss";
+import "./styles/_keyframes.scss";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";

@@ -8,6 +8,7 @@ module.exports = {
             @import "@/styles/_base.scss";
             @import "@/styles/_mixins.scss";
             @import "@/styles/_global.scss";
+            @import "@/styles/_keyframes.scss";
           `,
       },
     },
