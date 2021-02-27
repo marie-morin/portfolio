@@ -16,3 +16,39 @@
     padding-left: 1rem;
   }
 }
+
+.btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(0.2rem);
+  }
+  &:hover {
+    box-shadow: $shadow;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: $clear-color;
+    border: none;
+    border-radius: $small-radius;
+  }
+
+  &--outline {
+    font-size: 1.5rem;
+    border: 2px solid pink;
+    border-radius: 25px;
+    background-color: transparent;
+    color: pink;
+  }
+}

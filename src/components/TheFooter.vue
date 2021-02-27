@@ -6,7 +6,10 @@ export default { name: "TheFooter" };
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="footer_cta">Vous-êtes prêts à travailler avec moi ?</div>
+      <div class="footer_cta">
+        <p>Vous-êtes prêts à travailler avec moi ?</p>
+        <a href="#" class="btn btn--outline">Montactez-moi</a>
+      </div>
       <p>Retrouvez-moi sur :</p>
       <div className="footer__socials">
         <a href="https://github.com/marie-morin" target="_blank" class="icon">
@@ -42,12 +45,14 @@ export default { name: "TheFooter" };
   text-align: center;
 
   &_cta {
-    width: 60%;
+    width: 70%;
     height: 8rem;
     margin: -6rem auto 2rem auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     border-radius: $generic-radius;

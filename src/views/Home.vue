@@ -1,11 +1,12 @@
 <script>
 import ProjetPreview from "../components/ProjetPreview";
-import BaseButton from "../components/BaseButton";
 import Projets from "../assets/projets.json";
 
 export default {
   name: "Home",
-  components: { ProjetPreview, BaseButton },
+
+  components: { ProjetPreview },
+
   data() {
     return {
       projets: [],
@@ -25,12 +26,8 @@ export default {
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
-        <BaseButton tag="a" isGenericBtn tabindex="0">
-          Me contacter
-        </BaseButton>
-        <BaseButton tag="a" isGenericBtn tabindex="0">
-          Técléchrger mon cv
-        </BaseButton>
+        <a href="#" class="btn btn--primary">Me contacter</a>
+        <a href="#" class="btn btn--primary">Télecharger mon CV</a>
       </div>
     </section>
 
