@@ -1,3 +1,20 @@
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  // margin-top: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 .container {
   max-width: 110rem;
   width: 100%;
@@ -27,14 +44,12 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  transition: all 0.2s;
   cursor: pointer;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
 
   &:active {
     transform: translateY(0.2rem);
-  }
-  &:hover {
-    box-shadow: $shadow;
   }
 
   &--primary {
@@ -42,6 +57,11 @@
     color: $clear-color;
     border: none;
     border-radius: $small-radius;
+
+    &:hover {
+      box-shadow: $shadow;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   &--outline {
@@ -50,5 +70,11 @@
     border-radius: 25px;
     background-color: transparent;
     color: pink;
+
+    &:hover {
+      background-color: pink;
+      color: $secondary-color;
+      transition: all 0.3s ease-in-out;
+    }
   }
 }

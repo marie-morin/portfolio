@@ -81,7 +81,7 @@ export default {
   }
 
   svg {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: white;
 
     &:hover {

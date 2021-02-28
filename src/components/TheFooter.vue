@@ -8,7 +8,9 @@ export default { name: "TheFooter" };
     <div class="container">
       <div class="footer_cta">
         <p>Vous-êtes prêts à travailler avec moi ?</p>
-        <a href="#" class="btn btn--outline">Contactez-moi</a>
+        <a href="mailto:mariemorin19@gmail.com" class="btn btn--outline">
+          Contactez-moi
+        </a>
       </div>
       <p>Retrouvez-moi sur :</p>
       <div className="footer__socials">
@@ -60,6 +62,23 @@ export default { name: "TheFooter" };
     color: white;
 
     font-size: 2rem;
+
+    @media screen and (max-width: $break-tablet) {
+      width: 90%;
+    }
+
+    @media screen and (max-width: $break-small) {
+      width: 95%;
+      height: 12rem;
+      margin: -8rem auto 2rem auto;
+      padding: 2rem;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        margin: 0 0 1rem 0;
+      }
+    }
   }
 
   &_socials {
