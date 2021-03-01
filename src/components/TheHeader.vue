@@ -64,16 +64,6 @@ export default {
             </a>
           </li>
 
-          <!-- <li>
-            <a
-              href="#about"
-              @click="menuOpening = false"
-              :class="{ active: selectedPage == 'About' }"
-            >
-              A Propos
-            </a>
-          </li> -->
-
           <li>
             <a
               href="#projets"
@@ -83,6 +73,17 @@ export default {
               Projets
             </a>
           </li>
+
+          <li>
+            <a
+              href="#about"
+              @click="menuOpening = false"
+              :class="{ active: selectedPage == 'About' }"
+            >
+              A Propos
+            </a>
+          </li>
+
           <li>
             <a
               href="mailto:mariemorin19@gmail.com"
@@ -153,6 +154,7 @@ export default {
   }
 
   .links {
+    max-width: 32rem;
     display: flex;
     align-items: center;
 

@@ -191,6 +191,11 @@ export default {
       padding-left: 5rem;
       padding-right: 5rem;
     }
+
+    @media screen and (max-width: $break-small) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
   }
 }
 

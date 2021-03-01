@@ -37,6 +37,7 @@ export default {
 
   min-height: 30rem;
   width: 100%;
+  max-width: 100%;
   height: auto;
 
   background-color: white;

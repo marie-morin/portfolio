@@ -4,9 +4,8 @@ import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   name: "App",
-  components: {TheHeader, TheFooter},
+  components: { TheHeader, TheFooter },
 };
-
 </script>
 
 
@@ -15,7 +14,7 @@ export default {
   <main id="app" class="app">
     <div class="app__topcontent">
       <TheHeader />
-      <router-view class="app__router"/>
+      <router-view class="app__router" />
     </div>
     <TheFooter />
   </main>
@@ -25,7 +24,7 @@ export default {
 
 <style scoped lang="scss">
 .app {
-//   min-width: 100%;
+  //   min-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,6 +36,7 @@ export default {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 
   &__topcontent {
     min-height: 100vh;
@@ -49,5 +49,4 @@ export default {
     width: 100%;
   }
 }
-
 </style>
