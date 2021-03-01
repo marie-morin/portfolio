@@ -9,13 +9,36 @@ export default {
 
 <template>
   <ul class="timeline">
-    <TimelineItem side="left" />
-    <TimelineItem side="right" />
-    <TimelineItem side="left" />
-    <TimelineItem side="right" />
+    <TimelineItem />
+    <TimelineItem placedRight="true" />
+    <TimelineItem />
+    <TimelineItem placedRight="true" />
   </ul>
 </template>
 
 
 <style scoped lang="scss">
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+
+  &:before {
+    content: " ";
+    width: 3px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -3px;
+    background: pink;
+    z-index: 5;
+  }
+
+  li:not(first-child) {
+    margin-top: 3rem;
+  }
+}
 </style>

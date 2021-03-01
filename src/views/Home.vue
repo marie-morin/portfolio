@@ -2,13 +2,12 @@
 import ProjetPreview from "../components/ProjetPreview";
 import Projets from "../assets/projets.json";
 import Timeline from "@/components/Timeline";
-import Test from "@/components/Test";
 import LangageIcon from "@/components/LangageIcon";
 
 export default {
   name: "Home",
 
-  components: { ProjetPreview, Timeline, Test, LangageIcon },
+  components: { ProjetPreview, Timeline, LangageIcon },
 
   data() {
     return {
@@ -57,7 +56,6 @@ export default {
         Autem rem quasi beatae excepturi velit.
       </p>
       <Timeline />
-      <Test />
     </section>
 
     <section class="technos container">
