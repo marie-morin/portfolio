@@ -20,12 +20,13 @@ export default {
 <style scoped lang="scss">
 .timeline {
   position: relative;
-  margin: 0 auto;
+  margin: 0rem auto;
+  margin-top: 6rem;
   padding: 0;
   list-style-type: none;
 
   @media screen and (max-width: $break-tablet - 100) {
-    padding: 0 3rem;
+    padding: 3rem;
   }
 
   &:before {

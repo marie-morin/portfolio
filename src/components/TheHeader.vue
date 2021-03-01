@@ -64,15 +64,15 @@ export default {
             </a>
           </li>
 
-          <li>
+          <!-- <li>
             <a
               href="#about"
               @click="menuOpening = false"
               :class="{ active: selectedPage == 'About' }"
             >
-              CV
+              A Propos
             </a>
-          </li>
+          </li> -->
 
           <li>
             <a
@@ -84,9 +84,12 @@ export default {
             </a>
           </li>
           <li>
-            <a href="mailto:mariemorin19@gmail.com" @click="menuOpening = false"
-              >Contact</a
+            <a
+              href="mailto:mariemorin19@gmail.com"
+              @click="menuOpening = false"
             >
+              Contact
+            </a>
           </li>
         </ul>
 

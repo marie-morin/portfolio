@@ -1,13 +1,14 @@
 <script>
 import ProjetPreview from "../components/ProjetPreview";
 import Projets from "../assets/projets.json";
-import Timeline from "@/components/Timeline";
+// import Timeline from "@/components/Timeline";
 import LangageIcon from "@/components/LangageIcon";
 
 export default {
   name: "Home",
 
-  components: { ProjetPreview, Timeline, LangageIcon },
+  components: { ProjetPreview, LangageIcon },
+  // components: { ProjetPreview, Timeline, LangageIcon },
 
   data() {
     return {
@@ -27,7 +28,7 @@ export default {
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
-        <a href="#" class="btn btn--primary">Télecharger mon CV</a>
+        <!-- <a href="#" class="btn btn--primary">Télecharger mon CV</a> -->
         <a href="mailto:mariemorin19@gmail.com" class="btn btn--primary">
           Me contacter
         </a>
@@ -45,18 +46,34 @@ export default {
       </div>
     </section>
 
-    <section class="about container">
+    <!-- <section class="about container">
       <h2 id="about">A Propos</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita id
-        sint saepe unde illum repellat animi in ducimus, voluptatibus quod harum
-        at iure veniam. Autem rem quasi beatae excepturi velit. Lorem ipsum,
-        dolor sit amet consectetur adipisicing elit. Expedita id sint saepe unde
-        illum repellat animi in ducimus, voluptatibus quod harum at iure veniam.
-        Autem rem quasi beatae excepturi velit.
+        Je suis Marie, développeuse Web Fullstack. <br />
+
+        Après 5 ans dans la diététique, j’ai entrepris une reconversion
+        professionnelle pour me diriger vers le développement web. <br /><br />
+
+        C'est en tentant de créer un site web pour mon activité de déitéticienne
+        que j'ai découvert le développement web : l’aspect créatif m'a tout de
+        suite séduite, mais également l'apprentissage quotidien qu'il nécessite
+        ! <br /><br />
+
+        En 2020, décidée à transformer ma passion en profession, je me suis
+        inscrite au parcours Développeur Web proposé par OpenClassrooms. Cette
+        formation m'a permis d'acquérir les compétences nécessaires afin d'être
+        employable dans le domaine du développement web. <br />
+
+        Mon diplôme de Développeur web en poche, je continue à me former et à
+        pratiquer sur des projets personnels pour renforcer mes compétences et
+        en développer de nouvelles. <br /><br />
+
+        Le développement web m'apporte aujourd'hui exactement ce que je
+        recherchais en entamant ma reconversion professionnelle et j’ai hâte de
+        partager cela avec vous.
       </p>
       <Timeline />
-    </section>
+    </section> -->
 
     <section class="technos container">
       <h2>Technologies</h2>
@@ -115,7 +132,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  background-image: url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80");
+  background-image: url("../assets/hero-image.jpeg");
   background-color: white;
   background-position: center;
   background-repeat: no-repeat;
