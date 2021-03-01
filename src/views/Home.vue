@@ -46,7 +46,7 @@ export default {
       </div>
     </section>
 
-    <!-- <section class="about container">
+    <section class="about container">
       <h2 id="about">A Propos</h2>
       <p>
         Je suis Marie, développeuse Web Fullstack. <br />
@@ -72,8 +72,8 @@ export default {
         recherchais en entamant ma reconversion professionnelle et j’ai hâte de
         partager cela avec vous.
       </p>
-      <Timeline />
-    </section> -->
+      <!-- <Timeline /> -->
+    </section>
 
     <section class="technos container">
       <h2>Technologies</h2>
