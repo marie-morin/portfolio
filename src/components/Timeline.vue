@@ -10,9 +10,9 @@ export default {
 <template>
   <ul class="timeline">
     <TimelineItem />
-    <TimelineItem placedRight="true" />
+    <TimelineItem :placedRight="true" />
     <TimelineItem />
-    <TimelineItem placedRight="true" />
+    <TimelineItem :placedRight="true" />
   </ul>
 </template>
 
@@ -23,6 +23,10 @@ export default {
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
+
+  @media screen and (max-width: $break-tablet - 100) {
+    padding: 0 3rem;
+  }
 
   &:before {
     content: " ";
@@ -35,6 +39,10 @@ export default {
     margin-left: -3px;
     background: pink;
     z-index: 5;
+
+    @media screen and (max-width: $break-tablet - 100) {
+      left: 3rem;
+    }
   }
 
   li:not(first-child) {

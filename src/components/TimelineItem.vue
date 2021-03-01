@@ -40,21 +40,43 @@ export default {
   width: 50%;
   position: relative;
 
+  @media screen and (max-width: $break-tablet - 100) {
+    width: 100%;
+  }
+
   &--left {
     text-align: right;
 
+    @media screen and (max-width: $break-tablet - 100) {
+      text-align: left;
+    }
+
     &:before {
       right: -5px;
+
+      @media screen and (max-width: $break-tablet - 100) {
+        right: 100%;
+        left: -9px;
+      }
     }
 
     .item__content {
       margin-right: 2rem;
+
+      @media screen and (max-width: $break-tablet - 100) {
+        margin-right: 0;
+        margin-left: 2rem;
+      }
     }
   }
 
   &--right {
     text-align: left;
     left: 50%;
+
+    @media screen and (max-width: $break-tablet - 100) {
+      left: 0;
+    }
 
     &:before {
       left: -9px;
