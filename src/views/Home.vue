@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       projets: [],
+      cvPdf: require("../assets/CV-Integrateur-Web-Marie-Morin.pdf"),
     };
   },
 
@@ -28,7 +29,10 @@ export default {
       <p class="hero-hello">Hello World</p>
       <h1>let marieMorin = "Développeur web";</h1>
       <div>
-        <!-- <a href="#" class="btn btn--primary">Télecharger mon CV</a> -->
+        <a :href="cvPdf" target="_blank" class="btn btn--primary">
+          Télecharger mon CV
+        </a>
+
         <a href="mailto:mariemorin19@gmail.com" class="btn btn--primary">
           Me contacter
         </a>
