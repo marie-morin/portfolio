@@ -144,6 +144,10 @@ export default {
 
   text-align: center;
 
+  @media screen and (max-width: $break-small) {
+    height: 80vh;
+  }
+
   &::before {
     content: "";
     width: 100%;
@@ -205,6 +209,10 @@ export default {
 
 .about {
   padding-top: 3rem;
+
+  p {
+    padding: 0 2rem;
+  }
 }
 
 .technos {

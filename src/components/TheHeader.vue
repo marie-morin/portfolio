@@ -154,11 +154,11 @@ export default {
   }
 
   .links {
-    max-width: 32rem;
+    max-width: 100%;
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: $break-tablet) {
+    @media screen and (max-width: $break-tablet + 100) {
       min-width: 100vw;
       min-height: 100vh;
       position: fixed;
@@ -182,7 +182,7 @@ export default {
     margin: 0;
     padding: 0;
 
-    @media screen and (max-width: $break-tablet) {
+    @media screen and (max-width: $break-tablet + 100) {
       flex-direction: column;
       align-items: center;
     }
@@ -195,7 +195,7 @@ export default {
     position: relative;
     list-style: none;
 
-    @media screen and (min-width: $break-tablet + 1) {
+    @media screen and (min-width: $break-tablet + 99) {
       &:not(:first-child) {
         --marginLeft: 8rem;
         margin-left: var(--marginLeft);
@@ -215,7 +215,7 @@ export default {
     }
 
     &:not(:first-child) {
-      @media screen and (max-width: $break-tablet) {
+      @media screen and (max-width: $break-tablet + 100) {
         margin-top: 3rem;
       }
     }
@@ -234,7 +234,7 @@ export default {
       transition: all 0.3s ease-in-out;
     }
 
-    @media screen and (max-width: $break-tablet) {
+    @media screen and (max-width: $break-tablet + 100) {
       width: 100%;
       font-size: 3.5rem;
     }

@@ -50,7 +50,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
 
-  @media screen and (min-width: $break-tablet + 1) {
+  @media screen and (min-width: $break-tablet + 99) {
     display: none;
   }
 

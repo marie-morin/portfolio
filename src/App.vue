@@ -36,7 +36,7 @@ export default {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   &__topcontent {
     min-height: 100vh;
