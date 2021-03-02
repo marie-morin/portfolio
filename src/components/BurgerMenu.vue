@@ -49,6 +49,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  cursor: pointer;
 
   @media screen and (min-width: $break-tablet + 99) {
     display: none;

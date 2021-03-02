@@ -37,8 +37,8 @@ export default {
       </div>
     </section>
 
-    <section class="projets" id="projets">
-      <h2>Projets</h2>
+    <section class="projets">
+      <h2 id="projets">Mes Réalisations</h2>
       <div class="projets-list container">
         <ProjetPreview
           v-for="projet in projets"

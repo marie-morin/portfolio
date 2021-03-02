@@ -70,7 +70,7 @@ export default {
               @click="menuOpening = false"
               :class="{ active: selectedPage == 'Work' }"
             >
-              Projets
+              Réalisations
             </a>
           </li>
 
