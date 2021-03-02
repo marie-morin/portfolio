@@ -1,19 +1,17 @@
 <script>
 import ProjetPreview from "../components/ProjetPreview";
 import Projets from "../assets/projets.json";
-// import Timeline from "@/components/Timeline";
 import LangageIcon from "@/components/LangageIcon";
 
 export default {
   name: "Home",
 
   components: { ProjetPreview, LangageIcon },
-  // components: { ProjetPreview, Timeline, LangageIcon },
 
   data() {
     return {
       projets: [],
-      cvPdf: require("../assets/CV-Integrateur-Web-Marie-Morin.pdf"),
+      cvPdf: require("../assets/cv-marie-morin.pdf"),
     };
   },
 
